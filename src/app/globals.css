@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* CUSTOM STYLES */
+/* ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --red: #C41230;
+  --red2: #9B0F26;
+  --red3: #6e0819;
+  --red-g: linear-gradient(135deg, #C41230 0%, #9B0F26 100%);
+  --red-g-h: linear-gradient(135deg, #e01535 0%, #C41230 100%);
+  --bg: #0f0f0f;
+  --surface: #171717;
+  --surface2: #1f1f1f;
+  --border: #272727;
+  --border-soft: #222;
+  --gray-400: #888;
+  --gray-100: #f2f2f2;
+  --white: #fff;
+  --black: #111;
+  --sidebar-w: 420px;
+  --radius: 6px;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #C41230, #6e0819);
+  border-radius: 99px;
+}
+
+/* Form Elements */
+input, select, textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--white);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(196, 18, 48, 0.1);
+}
+
+button {
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+/* Print Styles */
+@media print {
+  #sidebar,
+  #preview-topbar,
+  #overlay,
+  #menu-toggle,
+  .print-hide {
+    display: none !important;
+  }
+
+  #pages {
+    background: white;
+    color: black;
+  }
+
+  .page {
+    page-break-after: always;
+    break-after: page;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  :root {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 11px;
+  }
+}
